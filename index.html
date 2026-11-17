@@ -6,134 +6,121 @@
 <title>André Guichard — Commercial & Customer Data Analyst</title>
 <meta name="description" content="Data analyst with 4 years in commercial and customer analytics: market share, retention, segmentation and impact measurement, from SQL/Python pipelines to Power BI and GenAI." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{
-    --bg:#0a0a0c; --bg-card:#131316; --bg-card-hover:#1a1a1e;
-    --border:rgba(255,255,255,.08); --border-hover:rgba(255,255,255,.18);
-    --text:#f2f2f0; --text-dim:#9a9a9e; --text-faint:#5e5e63;
-    --accent:#d4a574; --accent-glow:rgba(212,165,116,.15);
-    --serif:'Fraunces',serif; --sans:'Inter',sans-serif;
+    --bg:#ffffff; --bg-soft:#f5f7fa; --card:#ffffff;
+    --border:#e3e8ef; --border-hover:#c5d0de;
+    --navy:#1F3A5F; --accent:#2E6DA4; --accent-soft:#eaf2fa;
+    --text:#1b2533; --text-dim:#4f5d70; --text-faint:#8592a3;
+    --sans:'Inter',system-ui,sans-serif;
   }
-  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-
-  body::before{
-    content:'';position:fixed;inset:0;z-index:-1;
-    background:
-      radial-gradient(circle at 15% 10%, var(--accent-glow), transparent 35%),
-      radial-gradient(circle at 85% 90%, rgba(120,150,255,.08), transparent 40%);
-  }
 
   nav{
     position:sticky;top:0;z-index:50;
     display:flex;justify-content:space-between;align-items:center;
-    padding:1.1rem 3rem;backdrop-filter:blur(20px);
-    background:rgba(10,10,12,.7);border-bottom:1px solid var(--border);
+    padding:1rem 3rem;backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.88);border-bottom:1px solid var(--border);
   }
-  .nav-mark{font-family:var(--serif);font-size:18px;font-weight:500;letter-spacing:.02em}
-  .nav-links{display:flex;gap:2.2rem}
-  .nav-links a{font-size:13px;color:var(--text-dim);transition:color .2s;font-weight:500}
-  .nav-links a:hover{color:var(--text)}
+  .nav-mark{font-size:16px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+  .nav-links{display:flex;gap:2rem}
+  .nav-links a{font-size:13.5px;color:var(--text-dim);transition:color .2s;font-weight:500}
+  .nav-links a:hover{color:var(--accent)}
 
-  .wrap{max-width:920px;margin:0 auto;padding:0 3rem}
-
-  .hero{padding:7rem 3rem 5rem;max-width:920px;margin:0 auto}
+  .hero-band{background:linear-gradient(180deg,var(--bg-soft),#fff);border-bottom:1px solid var(--border)}
+  .hero{padding:6rem 3rem 4.5rem;max-width:960px;margin:0 auto}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:1.75rem;
+    color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:6px;margin-bottom:1.6rem;
   }
-  .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:#2a9d6a}
   .hero h1{
-    font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,6vw,4.4rem);
-    line-height:1.05;letter-spacing:-.01em;margin-bottom:1.6rem;
+    font-weight:700;font-size:clamp(2.3rem,5.2vw,3.7rem);color:var(--navy);
+    line-height:1.08;letter-spacing:-.025em;margin-bottom:1.4rem;max-width:760px;
   }
-  .hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
-  .hero p{font-size:17px;color:var(--text-dim);max-width:560px;margin-bottom:2.5rem;line-height:1.75}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{font-size:17px;color:var(--text-dim);max-width:600px;margin-bottom:2.2rem;line-height:1.75}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .btn{
-    font-size:13.5px;font-weight:600;padding:12px 22px;border-radius:99px;
-    display:inline-flex;align-items:center;gap:8px;transition:all .25s;cursor:pointer;
+    font-size:14px;font-weight:600;padding:11px 20px;border-radius:8px;
+    display:inline-flex;align-items:center;gap:8px;transition:all .2s;cursor:pointer;
     border:1px solid var(--border-hover);
   }
-  .btn-primary{background:var(--text);color:var(--bg);border-color:var(--text)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,.15)}
-  .btn-ghost{background:transparent;color:var(--text)}
-  .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:var(--text-dim)}
+  .btn-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn-primary:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px);box-shadow:0 6px 18px rgba(31,58,95,.18)}
+  .btn-ghost{background:#fff;color:var(--navy)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-  .stats-wrap{max-width:920px;margin:0 auto;padding:0 3rem 4rem}
-  .stats{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--border);border:1px solid var(--border);border-radius:18px;overflow:hidden;
-  }
-  .stat{background:var(--bg-card);padding:1.9rem 1.5rem;text-align:center}
-  .stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:500;color:var(--accent)}
-  .stat-label{font-size:12.5px;color:var(--text-dim);margin-top:6px;letter-spacing:.02em;max-width:190px;margin-left:auto;margin-right:auto}
+  .stats-wrap{max-width:960px;margin:-2.6rem auto 0;padding:0 3rem 2rem;position:relative}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stat{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:10px;padding:1.5rem 1.4rem;box-shadow:0 4px 14px rgba(27,37,51,.05)}
+  .stat-num{font-size:2.1rem;font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.1}
+  .stat-label{font-size:13px;color:var(--text-dim);margin-top:6px}
 
-  section{padding:4rem 3rem;max-width:920px;margin:0 auto}
-  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:2.5rem}
-  .section-num{font-family:var(--serif);font-size:13px;color:var(--accent);font-style:italic}
-  .section-title{font-family:var(--serif);font-size:1.7rem;font-weight:500}
+  section{padding:4rem 3rem;max-width:960px;margin:0 auto}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:2rem;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
+  .section-num{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.08em}
+  .section-title{font-size:1.6rem;font-weight:700;color:var(--navy);letter-spacing:-.015em}
 
-  .projects{display:flex;flex-direction:column;gap:14px}
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .project-card{
-    position:relative;background:var(--bg-card);border:1px solid var(--border);
-    border-radius:16px;padding:1.75rem 2rem;transition:all .3s ease;
-    display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:start;
+    position:relative;background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:1.6rem 1.6rem 1.4rem;transition:all .25s ease;
+    display:flex;flex-direction:column;gap:.6rem;
   }
-  .project-card:hover{background:var(--bg-card-hover);border-color:var(--border-hover);transform:translateY(-2px)}
-  .project-index{font-family:var(--serif);font-size:13px;color:var(--text-faint);padding-top:3px}
-  .project-card h3{font-size:16px;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
-  .badge{font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(212,165,116,.35);background:var(--accent-glow);padding:2px 9px;border-radius:99px}
-  div.project-card{grid-template-columns:auto 1fr}
-  .project-card p{font-size:13.5px;color:var(--text-dim);line-height:1.7;margin-bottom:.9rem;max-width:620px}
-  .tags{display:flex;flex-wrap:wrap;gap:7px}
-  .tag{font-size:11px;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.04);color:var(--text-dim);border:1px solid var(--border)}
-  .project-arrow{
-    align-self:center;width:34px;height:34px;border-radius:50%;
-    border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
-    font-size:14px;color:var(--text-dim);transition:all .25s;flex-shrink:0;
-  }
-  .project-card:hover .project-arrow{background:var(--accent);border-color:var(--accent);color:var(--bg);transform:rotate(45deg)}
+  .project-card:first-child{grid-column:1/-1}
+  .project-card::before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:0 3px 3px 0;background:var(--accent);opacity:0;transition:opacity .25s}
+  a.project-card:hover{border-color:var(--border-hover);box-shadow:0 10px 28px rgba(27,37,51,.08);transform:translateY(-2px)}
+  a.project-card:hover::before{opacity:1}
+  .project-index{font-size:12px;font-weight:700;color:var(--text-faint);letter-spacing:.06em}
+  .project-card h3{font-size:16.5px;font-weight:700;color:var(--navy);margin-bottom:.4rem;display:flex;align-items:center;flex-wrap:wrap;gap:8px;letter-spacing:-.01em}
+  .badge{font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:5px}
+  .project-card p{font-size:14px;color:var(--text-dim);line-height:1.7;margin-bottom:.9rem}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:5px;background:var(--bg-soft);color:var(--text-dim);border:1px solid var(--border)}
+  .project-arrow{position:absolute;top:1.4rem;right:1.4rem;font-size:15px;color:var(--text-faint);transition:all .25s}
+  a.project-card:hover .project-arrow{color:var(--accent);transform:translate(2px,-2px)}
 
-  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .skill-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.4rem}
-  .skill-card h4{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--accent);margin-bottom:.7rem;font-style:italic}
-  .skill-card .tags{gap:6px}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .skill-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;padding:1.3rem}
+  .skill-card h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.05em}
+  .skill-card .tag{background:#fff}
 
   .timeline{position:relative;padding-left:28px}
-  .timeline::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--border)}
-  .exp-item{position:relative;padding-bottom:2.4rem}
+  .timeline::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--border)}
+  .exp-item{position:relative;padding-bottom:2.2rem}
   .exp-item:last-child{padding-bottom:0}
-  .exp-item::before{content:'';position:absolute;left:-28px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .exp-item::before{content:'';position:absolute;left:-28px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--accent)}
   .exp-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:2px}
-  .exp-company{font-size:16px;font-weight:600}
-  .exp-date{font-size:12px;color:var(--text-faint)}
-  .exp-role{font-size:13.5px;color:var(--accent);margin-bottom:10px;font-weight:500}
+  .exp-company{font-size:16.5px;font-weight:700;color:var(--navy)}
+  .exp-date{font-size:12.5px;color:var(--text-faint);font-weight:500}
+  .exp-role{font-size:14px;color:var(--accent);margin-bottom:8px;font-weight:600}
   .exp-item .tags{margin-top:10px}
-  .exp-desc{font-size:13.5px;color:var(--text-dim);line-height:1.7;max-width:640px}
+  .exp-desc{font-size:14px;color:var(--text-dim);line-height:1.7;max-width:680px}
 
-  .contact-card{
-    background:linear-gradient(135deg,var(--bg-card),rgba(212,165,116,.06));
-    border:1px solid var(--border);border-radius:24px;padding:3.5rem;text-align:center;
-  }
-  .contact-card h2{font-family:var(--serif);font-size:2.1rem;font-weight:500;margin-bottom:1rem}
-  .contact-card h2 em{color:var(--accent);font-style:italic}
-  .contact-card p{color:var(--text-dim);margin-bottom:2rem;font-size:15px}
-  .contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .contact-card{background:var(--navy);border-radius:16px;padding:3.2rem;text-align:center;color:#fff}
+  .contact-card h2{font-size:2rem;font-weight:700;margin-bottom:.8rem;letter-spacing:-.02em}
+  .contact-card h2 em{font-style:normal;color:#9cc6ee}
+  .contact-card p{color:#c8d4e3;margin-bottom:2rem;font-size:15px}
+  .contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .contact-card .btn-primary{background:#fff;color:var(--navy);border-color:#fff}
+  .contact-card .btn-primary:hover{background:var(--accent-soft);color:var(--navy)}
+  .contact-card .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .contact-card .btn-ghost:hover{border-color:#fff;color:#fff}
 
-  footer{text-align:center;padding:3rem;font-size:12px;color:var(--text-faint)}
+  footer{text-align:center;padding:2.5rem 3rem 3rem;font-size:12.5px;color:var(--text-faint)}
 
-  @media(max-width:860px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:860px){.skills-grid{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}}
   @media(max-width:680px){
-    nav{padding:1rem 1.4rem}.nav-links{display:none}
-    .hero{padding:4rem 1.4rem 3rem}.stats-wrap{padding:0 1.4rem 3rem}.stats{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}
-    section{padding:3rem 1.4rem}
-    .project-card,div.project-card{grid-template-columns:1fr;gap:.8rem}
-    .project-arrow{display:none}
-    .contact-card{padding:2.2rem 1.6rem}
+    nav{padding:.9rem 16px}.nav-links{display:none}
+    .hero{padding:3.5rem 16px 4rem}.stats-wrap{padding:0 16px 1rem}.stats{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}
+    section{padding:3rem 16px}
+    .contact-card{padding:2.2rem 1.4rem}
   }
 </style>
 </head>
@@ -149,16 +136,17 @@
   </div>
 </nav>
 
-<div class="hero">
+<div class="hero-band"><div class="hero">
   <div class="eyebrow">Open to opportunities</div>
   <h1>Turning commercial and customer data into <em>decisions</em>.</h1>
   <p>I help commercial teams understand their markets and clients: market share, retention, segmentation and impact measurement — built on reliable SQL/Python pipelines, Power BI and GenAI. 4 years across energy, chemicals, med-tech and manufacturing. Based in Madrid.</p>
   <div class="hero-actions">
     <a href="https://github.com/andreguichardd" target="_blank" class="btn btn-primary">GitHub ↗</a>
     <a href="CV_Andre_Guichard.pdf" download class="btn btn-ghost">Download CV ↓</a>
+    <a href="https://www.linkedin.com/in/andr%C3%A9-guichard/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
     <a href="mailto:andreguichardd@gmail.com" class="btn btn-ghost">Get in touch</a>
   </div>
-</div>
+</div></div>
 
 <div class="stats-wrap"><div class="stats">
   <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Years in data &amp; analytics</div></div>
@@ -180,7 +168,7 @@
         <p>Measured the impact of a 1.2M-member B2C loyalty programme against a control group over one year: ~6 percentage points lower churn, equal to ~70,000 retained customers. Python/SQL pipelines on AWS Redshift, orchestrated daily with Airflow.</p>
         <div class="tags"><span class="tag">Impact measurement</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">Redshift</span></div>
       </div>
-      <span class="project-arrow">→</span>
+      <span class="project-arrow">↗</span>
     </a>
 
     <div class="project-card">
@@ -199,7 +187,7 @@
         <p>K-Means clustering on 36,000+ real tourist surveys across 123 behavioural features. Produced 10 visitor profiles with statistically validated spending gaps of up to €1,860/tourist.</p>
         <div class="tags"><span class="tag">K-Means</span><span class="tag">Kruskal-Wallis</span><span class="tag">Azure ML</span><span class="tag">Python</span></div>
       </div>
-      <span class="project-arrow">→</span>
+      <span class="project-arrow">↗</span>
     </a>
 
     <a href="https://github.com/andreguichardd/spotify-A-B-testing" target="_blank" class="project-card">
@@ -209,7 +197,7 @@
         <p>End-to-end experiment on simulated streaming data: power analysis and sample sizing, Welch's t-test and Mann-Whitney U, effect size, secondary metrics and a documented ship / no-ship decision.</p>
         <div class="tags"><span class="tag">Experiment design</span><span class="tag">Power analysis</span><span class="tag">SciPy</span><span class="tag">Python</span></div>
       </div>
-      <span class="project-arrow">→</span>
+      <span class="project-arrow">↗</span>
     </a>
 
     <a href="https://github.com/andreguichardd/Telecomunication-Churn" target="_blank" class="project-card">
@@ -219,7 +207,7 @@
         <p>End-to-end ML pipeline on a public telecom dataset of 7,000+ customer records. XGBoost classifier evaluated with AUC-ROC and SHAP values for model explainability.</p>
         <div class="tags"><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Scikit-learn</span></div>
       </div>
-      <span class="project-arrow">→</span>
+      <span class="project-arrow">↗</span>
     </a>
 
     <a href="https://github.com/andreguichardd/Prediction_Of_Economic_Recesions" target="_blank" class="project-card">
@@ -229,7 +217,7 @@
         <p>ML model predicting US economic recessions — EY thesis project. Macroeconomic feature engineering and time-series modelling.</p>
         <div class="tags"><span class="tag">Time Series</span><span class="tag">Economics</span><span class="tag">Python</span></div>
       </div>
-      <span class="project-arrow">→</span>
+      <span class="project-arrow">↗</span>
     </a>
 
     <a href="https://github.com/andreguichardd/Data-Engineering" target="_blank" class="project-card">
@@ -239,7 +227,7 @@
         <p>Python pipeline that pulls data from the INE and Eurostat APIs, joins and cleans it, and pushes the result to a Power BI dataset through the REST API.</p>
         <div class="tags"><span class="tag">ETL</span><span class="tag">REST APIs</span><span class="tag">Power BI</span><span class="tag">Python</span></div>
       </div>
-      <span class="project-arrow">→</span>
+      <span class="project-arrow">↗</span>
     </a>
 
   </div>
